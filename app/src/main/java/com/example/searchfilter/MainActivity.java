@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner = findViewById(R.id.spinner);
 
         stringArrayAdapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_spinner_item,paths);
-        stringArrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        stringArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(stringArrayAdapter);
         spinner.setOnItemSelectedListener(this);
 
@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     AdapterClass adapterClass = new AdapterClass(list, getApplicationContext());
                     adapterClass.notifyDataSetChanged();
                     recyclerView.setAdapter(adapterClass);
+                    Log.i("list", "" + list.size());
                 }
             }
 
@@ -167,6 +168,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Intent intent = new Intent(this, AddUser.class);
                 startActivity(intent);
                 Log.i("Bum", "Bumbum");
+                break;
+            case R.id.love:
+                Intent intent1 = new Intent(this, Loved.class);
+                startActivity(intent1);
+                Log.i("Bum", "Lope");
                 break;
         }
     }

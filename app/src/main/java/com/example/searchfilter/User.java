@@ -8,15 +8,25 @@ import java.util.Map;
 public class User {
     private String img, name, status;
     private Long follower;
+    private boolean love;
 
     public User() {
     }
 
-    public User(Long follower,String img, String name, String status) {
+    public User(Long follower,String img, String name, String status, boolean love) {
         this.img = img;
         this.name = name;
         this.status = status;
         this.follower = follower;
+        this.love = love;
+    }
+
+    public boolean isLove() {
+        return love;
+    }
+
+    public void setLove(boolean love) {
+        this.love = love;
     }
 
     public Long getFollower() {
